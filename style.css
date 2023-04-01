@@ -1,0 +1,22 @@
+#grid{
+    border-color: blueviolet;
+    border-width: 2px;
+    border-style: solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    width: 835px;
+    margin: auto;
+}
+.div-row{
+    display: flex;
+    border-width: 2px;
+    border-style: solid;
+}
+.div-square{
+    width: 40px;
+    padding: 5px;
+    border-width: 1px;
+    border-style: solid;
+}
