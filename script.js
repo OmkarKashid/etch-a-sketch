@@ -25,13 +25,19 @@ function createSquares(totalSquaresRow){
 function changeSquareColor(event){
     const squareId = event.target.id;
     const square = document.querySelector(`#${squareId}`);
-    square.classList.add("hover");
+    if(mode == "sketch"){
+        square.classList.add("hover");
+    }
+    if(mode == "erase"){
+        square.classList.remove("hover");
+    }
 
 }
-function removeSquareColor(event){
-    const squareId = event.target.id;
-    const square = document.querySelector(`#${squareId}`);
-    square.classList.remove("hover");
+function changeModeSketch(){
+    mode = "sketch";
+}
+function changeModeErase(){
+    mode = "erase"; 
 }
 /* Function to resize Grid */
 function resizeGrid(){
@@ -56,9 +62,12 @@ function createGrid(totalRows, totalSquaresRow){
 }
 const totalRows = 16; //total div rows to be created
 const totalSquaresRow = 16; //total squares per row to be created
+let mode = "sketch";
 createGrid(totalRows, totalSquaresRow);
 const btnResize = document.querySelector("#btn_resize");
 btnResize.addEventListener("click", e => resizeGrid());
+const btnSketch = document.querySelector("#btn_sketch");
+btnSketch.addEventListener("click", () => changeModeSketch());
 const btnErase = document.querySelector("#btn_erase");
-btnErase.addEventListener("click", e => removeSquareColor(e));
+btnErase.addEventListener("click", () => changeModeErase());
 
