@@ -5,20 +5,28 @@
     display: flex;
     flex-direction: column; /*for stacking div rows vertically*/
     align-items: center;
-    flex-grow: 1;
-    width: 835px;
+    flex-basis: 1;
+    width: 730px;
+    height: 450px;
     margin: auto;
 }
 .div-row{
     display: flex;
-    border-width: 2px;
-    border-style: solid;
+    flex-basis: auto;
+    flex-grow: 1;
+    flex-shrink: 1;
+    width: 730px;
+    height: 150px;
+   /* border-width: 1px;
+    border-style: solid; */
 }
 .div-square{
-    width: 40px;
-    padding: 5px;
-    border-width: 1px;
-    border-style: solid;
+    flex-grow: 1;
+    flex-shrink: 1;
+    min-width: 5px;
+    padding: 1px;
+    /* border-width: 1px;
+    border-style: solid; */
 }
 .hover{
     background-color: aqua;
